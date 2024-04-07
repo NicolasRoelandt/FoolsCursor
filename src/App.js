@@ -1,4 +1,5 @@
 import cursor from "./cursor.svg";
+import hand from "./hand.svg";
 import "./App.css";
 import React from "react";
 import { useRef, useEffect, useState } from "react";
@@ -9,6 +10,7 @@ let MARGIN = 50;
 let HEADER_HEIGHT = 0;
 function App() {
   let [questionIndex, setQuestionIndex] = useState(0);
+  let [cursorType, setCursorType] = useState("pointer");
   let current = data[questionIndex];
   let [nearestButtonIndex, setNearestButtonIndex] = useState(0);
 
@@ -19,13 +21,16 @@ function App() {
     buttonsPositions.map(() => "none")
   );
 
+  let onMouseEnter = () => setCursorType("mouse");
+  let onMouseLeave = () => setCursorType("pointer");
+
   const whileMouseDown = () => {
     let butPos = buttonsPositions[nearestButtonIndex];
     let dy = cursorPos.y - butPos.y;
     let dx = cursorPos.x - butPos.x;
     let angle = Math.atan2(dy, dx);
 
-    if (Math.abs(dx) + Math.abs(dy) < 10) return;
+    if (Math.abs(dx) + Math.abs(dy) < 20) return;
     let newPos = {
       x: butPos.x + SPEED * Math.cos(angle),
       y: butPos.y + SPEED * Math.sin(angle),
@@ -110,7 +115,7 @@ function App() {
           transformOrigin: "9px 8px",
         }}
       >
-        <img alt="Cursor Arrow" src={cursor} />
+        <img alt="Cursor Arrow" src={cursorType == "pointer" ? cursor : hand} />
       </div>
       <header>
         Question {questionIndex + 1}: {current.question}
@@ -123,6 +128,8 @@ function App() {
           label={current.answers[index]}
           state={buttonsStates[index]}
           onPress={() => onButtonPress(index)}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         />
       ))}
     </div>
@@ -166,7 +173,7 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-function Button({ pos, label, onPress, state }) {
+function Button({ pos, label, onPress, state, onMouseEnter, onMouseLeave }) {
   const ref = useRef(null);
   let width = ref.current ? ref.current.offsetWidth : 0;
   let height = ref.current ? ref.current.offsetHeight : 0;
@@ -192,9 +199,11 @@ function Button({ pos, label, onPress, state }) {
         left: pos.x - width / 2,
         top: pos.y - height / 2,
         backgroundColor: color,
-        // ...(state != "none" && { transition: "background-color 1s" }),
+        ...(state != "none" && { transition: "background-color 1s" }),
       }}
       onClick={onPress}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       {label}
     </button>
