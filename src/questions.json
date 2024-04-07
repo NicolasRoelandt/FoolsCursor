@@ -1,0 +1,129 @@
+[
+  {
+    "question": "What was the original name of Mickey Mouse?",
+    "answers": ["Mortimer Mouse", "The Rat", "Marvin Mouse", "Marshall Mouse"]
+  },
+  {
+    "question": "Which superhero, with the alter ego Wade Wilson and the powers of accelerated healing, was played by Ryan Reynolds in a 2016 film of the same name?",
+    "answers": ["Deadpool", "Black Panther", "Ant-Man", "Hawk"]
+  },
+  {
+    "question": "What is the next line for American Pie? Bye, bye Miss American Pie _________",
+    "answers": [
+      "Drove my Chevy to the levee",
+      "I don’t want to see you again",
+      "Good Luck to you",
+      "I am hitting the road"
+    ]
+  },
+  {
+    "question": "Who was the first Disney character created by Walt Disney?",
+    "answers": ["Mickey Mouse", "Alladin", "Donald Duck", "Sleeping Beauty"]
+  },
+  {
+    "question": "Who sings Poker Face?",
+    "answers": ["Lady Gaga", "Madonna", "Taylor Swift", "Kelly Clarkson"]
+  },
+  {
+    "question": "How would Groot answer this question?",
+    "answers": [
+      "I am groot",
+      "YO homie whats up!",
+      "Mark is the bomb yo!",
+      "Groot I am young padawan"
+    ]
+  },
+  {
+    "question": "What did Aladdin steal in the marketplace at the beginning of 'Aladdin'?",
+    "answers": ["Bread", "Apple", "Rice", "Gold"]
+  },
+  {
+    "question": "Stark Industries is associated with which fictional superhero?",
+    "answers": ["Iron Man", "Iron Fist", "Hulk", "Captain America"]
+  },
+  {
+    "question": "In Zootopia, Officer Judy Hopps is what kind of animal?",
+    "answers": ["Rabbit", "Kangaroo", "Deer", "Fox"]
+  },
+  {
+    "question": "Which superhero gains his transformation following accidental exposure to gamma rays during the detonation of an experimental bomb?",
+    "answers": ["Hulk", "Iron Man", "The Human Flame", "Silver Surfer"]
+  },
+  {
+    "question": "What are the names of Cinderella’s evil stepsisters?",
+    "answers": [
+      "Anastasia and Drizella",
+      "Gizelle and Anabelle",
+      "Florence and Marge",
+      "Pam and Shirley"
+    ]
+  },
+  {
+    "question": "Mary Jane Watson has been portrayed by which actress in three movies directed by Sam Raimi?",
+    "answers": [
+      "Kirsten Dunst",
+      "Stephanie Tyler",
+      "Zendaya",
+      "Shailene Woodley"
+    ]
+  },
+  {
+    "question": "Which College Is Elle Applying For In Legally Blonde?",
+    "answers": ["Harvard", "Yale", "Duke", "Princeton"]
+  },
+  {
+    "question": "In Harry Potter, who is Fluffy?",
+    "answers": [
+      "Hagrid’s 3 Headed Dog",
+      "Harry’s Owl",
+      "Hagrid’s Dragon",
+      "Hermione’s Cat"
+    ]
+  },
+  {
+    "question": "What’s the name of the sword in The Sword In The Stone?",
+    "answers": ["Excalibur", "Glamdring", "Callandor", "Nibue"]
+  },
+  {
+    "question": "Which Museum Is Featured In Night at the Museum?",
+    "answers": [
+      "Museum of Natural History",
+      "The Louvre",
+      "The Smithsonian",
+      "National Museum of the American Indian"
+    ]
+  },
+  {
+    "question": "In the early days it was called ‘The DB’, but which fictional New York City tabloid newspaper often appears in the comic books published by Marvel Comics?",
+    "answers": [
+      "The Daily Bugle",
+      "The Times",
+      "The Daily News",
+      "The Chronicle"
+    ]
+  },
+  {
+    "question": "Which superhero is commonly known as Logan and sometimes as Weapon X?",
+    "answers": ["Wolverine", "Silver Surfer", "Green Lantern", "Aquaman"]
+  },
+  {
+    "question": "Which Magazine Does Miranda Work For In The Devil Wears Prada?",
+    "answers": ["Runway", "The Thread", "Upper Elite", "Fashion Bash"]
+  },
+  {
+    "question": "Who sings 'Blurred Lines'?",
+    "answers": ["Robin Thicke", "Pharrell Williams", "Nick Cannon", "Pitbull"]
+  },
+  {
+    "question": "The Playstation game console was developed by which company?",
+    "answers": ["Sony", "Nintendo", "Sega", "Capcom"]
+  },
+  {
+    "question": "Which part of his body did Charlie Chaplin insure?",
+    "answers": ["Feet", "Moustache", "Hands", "Face"]
+  },
+  {
+    "question": "What is the license plate of the DeLorean in the Back to the Future films?",
+    "answers": ["Outatime", "GoFuture", "88timego", "1Time"]
+  }
+]

@@ -2,18 +2,22 @@ import cursor from "./cursor.svg";
 import "./App.css";
 import React from "react";
 import { useRef, useEffect, useState } from "react";
+const data = require("./questions.json");
+
+let SPEED = 10;
+let MARGIN = 50;
+let HEADER_HEIGHT = 0;
 function App() {
-  let [mouseIsDown, setMouseIsDown] = useState(false);
+  let [questionIndex, setQuestionIndex] = useState(0);
+  let current = data[questionIndex];
   let [nearestButtonIndex, setNearestButtonIndex] = useState(0);
 
   let [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
-  let [buttonsPositions, setButtonsPositions] = useState([
-    { x: 50, y: 50 },
-    { x: 50, y: 400 },
-    { x: 400, y: 50 },
-    { x: 400, y: 400 },
-  ]);
+  let [buttonsPositions, setButtonsPositions] = useState(() => randomState());
+  let [buttonsStates, setButtonsStates] = useState(
+    buttonsPositions.map(() => "none")
+  );
 
   const whileMouseDown = () => {
     let butPos = buttonsPositions[nearestButtonIndex];
@@ -21,10 +25,10 @@ function App() {
     let dx = cursorPos.x - butPos.x;
     let angle = Math.atan2(dy, dx);
 
-    if (dx + dy < 4) return;
+    if (Math.abs(dx) + Math.abs(dy) < 10) return;
     let newPos = {
-      x: butPos.x + Math.cos(angle),
-      y: butPos.y + Math.sin(angle),
+      x: butPos.x + SPEED * Math.cos(angle),
+      y: butPos.y + SPEED * Math.sin(angle),
     };
 
     let newPositions = buttonsPositions.map((pos, index) => {
@@ -35,6 +39,14 @@ function App() {
     });
 
     setButtonsPositions(newPositions);
+  };
+
+  const triggerStateChange = (questionIndex) => {
+    setTimeout(() => {
+      setButtonsPositions(randomState());
+      setButtonsStates(buttonsPositions.map(() => "none"));
+      setQuestionIndex(questionIndex);
+    }, 1000);
   };
 
   const updateMousePosition = (ev) => {
@@ -58,26 +70,33 @@ function App() {
   }, [buttonsPositions, setNearestButtonIndex, cursorPos]);
 
   useInterval(() => {
-    if (mouseIsDown) whileMouseDown();
-  }, 10);
+    whileMouseDown();
+  }, 50);
+
+  const onButtonPress = (index) => {
+    if (index !== 0) {
+      setButtonsStates(
+        buttonsStates.map((state, i) => (i === index ? "wrong" : state))
+      );
+      triggerStateChange(questionIndex);
+    } else {
+      setButtonsStates(
+        buttonsStates.map((state, i) => (i === index ? "correct" : state))
+      );
+      if (questionIndex + 1 >= data.length) {
+        alert("You finished the quiz! Congrats for making it all the way!");
+        return;
+      }
+      triggerStateChange(questionIndex + 1);
+    }
+  };
 
   return (
-    <div
-      className="App"
-      onMouseDown={(e) => {
-        e.preventDefault();
-        setMouseIsDown(true);
-      }}
-      onMouseUp={() => setMouseIsDown(false)}
-      onMouseLeave={() => {
-        console.log("mouse out");
-        setMouseIsDown(false);
-      }}
-      onMouseMove={updateMousePosition}
-    >
+    <div className="App" onMouseMove={updateMousePosition}>
       <div
         id="cursor"
         style={{
+          pointerEvents: "none",
           zIndex: 99999,
           height: 28,
           width: 28,
@@ -93,13 +112,33 @@ function App() {
       >
         <img alt="Cursor Arrow" src={cursor} />
       </div>
-      <header className="App-header">
-        {buttonsPositions.map((pos, index) => (
-          <Button pos={pos} key={index} />
-        ))}
+      <header>
+        Question {questionIndex + 1}: {current.question}
       </header>
+
+      {buttonsPositions.map((pos, index) => (
+        <Button
+          pos={pos}
+          key={index}
+          label={current.answers[index]}
+          state={buttonsStates[index]}
+          onPress={() => onButtonPress(index)}
+        />
+      ))}
     </div>
   );
+}
+
+function randomState() {
+  const a = Array.from({ length: 4 }, () => ({
+    x: randomBetween(MARGIN, window.innerWidth - MARGIN),
+    y: randomBetween(HEADER_HEIGHT + MARGIN, window.innerHeight - MARGIN),
+  }));
+  return a;
+}
+function randomBetween(min, max) {
+  const a = min + Math.random() * (max - min);
+  return a;
 }
 
 function computeAngle(cursor, but) {
@@ -127,24 +166,38 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-function Button({ pos }) {
-  let width = 100;
-  let height = 50;
+function Button({ pos, label, onPress, state }) {
+  const ref = useRef(null);
+  let width = ref.current ? ref.current.offsetWidth : 0;
+  let height = ref.current ? ref.current.offsetHeight : 0;
+
+  const color = (() => {
+    switch (state) {
+      case "correct":
+        return "hsl(148, 70%, 31%)";
+      case "wrong":
+        return "#FFCCCC";
+      default:
+        return undefined;
+    }
+  })();
+
   return (
-    <div>
-      <button
-        style={{
-          width: width,
-          height: height,
-          padding: 4,
-          position: "absolute",
-          left: pos.x - width / 2,
-          top: pos.y - height / 2,
-        }}
-      >
-        Click me
-      </button>
-    </div>
+    <button
+      ref={ref}
+      className="button"
+      style={{
+        padding: 8,
+        position: "absolute",
+        left: pos.x - width / 2,
+        top: pos.y - height / 2,
+        backgroundColor: color,
+        // ...(state != "none" && { transition: "background-color 1s" }),
+      }}
+      onClick={onPress}
+    >
+      {label}
+    </button>
   );
 }
 
