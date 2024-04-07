@@ -79,24 +79,21 @@ function App() {
         id="cursor"
         style={{
           zIndex: 99999,
-          height: 16,
-          width: 16,
+          height: 28,
+          width: 28,
           position: "absolute",
-          left: cursorPos.x - 5,
-          top: cursorPos.y - 5,
+          left: cursorPos.x - 9,
+          top: cursorPos.y - 8,
           transform: `rotate(${computeAngle(
             cursorPos,
             buttonsPositions[nearestButtonIndex]
           )}deg)`,
-          transformOrigin: "5px 5px",
+          transformOrigin: "9px 8px",
         }}
       >
         <img alt="Cursor Arrow" src={cursor} />
       </div>
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         {buttonsPositions.map((pos, index) => (
           <Button pos={pos} key={index} />
         ))}
