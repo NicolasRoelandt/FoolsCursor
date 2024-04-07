@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/FoolsCursor/static/css/main.ae73219d.css",
-    "main.js": "/FoolsCursor/static/js/main.ad25c85f.js",
+    "main.css": "/FoolsCursor/static/css/main.a5121b3a.css",
+    "main.js": "/FoolsCursor/static/js/main.ceb59b3f.js",
     "static/js/453.2eaa443f.chunk.js": "/FoolsCursor/static/js/453.2eaa443f.chunk.js",
     "index.html": "/FoolsCursor/index.html",
     "static/media/cursor.svg": "/FoolsCursor/static/media/cursor.3602f2f85a01bba8498e9ea26b5d7f62.svg",
-    "main.ae73219d.css.map": "/FoolsCursor/static/css/main.ae73219d.css.map",
-    "main.ad25c85f.js.map": "/FoolsCursor/static/js/main.ad25c85f.js.map",
+    "main.a5121b3a.css.map": "/FoolsCursor/static/css/main.a5121b3a.css.map",
+    "main.ceb59b3f.js.map": "/FoolsCursor/static/js/main.ceb59b3f.js.map",
     "453.2eaa443f.chunk.js.map": "/FoolsCursor/static/js/453.2eaa443f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ae73219d.css",
-    "static/js/main.ad25c85f.js"
+    "static/css/main.a5121b3a.css",
+    "static/js/main.ceb59b3f.js"
   ]
 }
