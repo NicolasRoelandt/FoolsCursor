@@ -1,129 +1,433 @@
-[
-  {
-    "question": "What was the original name of Mickey Mouse?",
-    "answers": ["Mortimer Mouse", "The Rat", "Marvin Mouse", "Marshall Mouse"]
-  },
-  {
-    "question": "Which superhero, with the alter ego Wade Wilson and the powers of accelerated healing, was played by Ryan Reynolds in a 2016 film of the same name?",
-    "answers": ["Deadpool", "Black Panther", "Ant-Man", "Hawk"]
-  },
-  {
-    "question": "What is the next line for American Pie? Bye, bye Miss American Pie _________",
-    "answers": [
-      "Drove my Chevy to the levee",
-      "I don’t want to see you again",
-      "Good Luck to you",
-      "I am hitting the road"
-    ]
-  },
-  {
-    "question": "Who was the first Disney character created by Walt Disney?",
-    "answers": ["Mickey Mouse", "Alladin", "Donald Duck", "Sleeping Beauty"]
-  },
-  {
-    "question": "Who sings Poker Face?",
-    "answers": ["Lady Gaga", "Madonna", "Taylor Swift", "Kelly Clarkson"]
-  },
-  {
-    "question": "How would Groot answer this question?",
-    "answers": [
-      "I am groot",
-      "YO homie whats up!",
-      "Mark is the bomb yo!",
-      "Groot I am young padawan"
-    ]
-  },
-  {
-    "question": "What did Aladdin steal in the marketplace at the beginning of 'Aladdin'?",
-    "answers": ["Bread", "Apple", "Rice", "Gold"]
-  },
-  {
-    "question": "Stark Industries is associated with which fictional superhero?",
-    "answers": ["Iron Man", "Iron Fist", "Hulk", "Captain America"]
-  },
-  {
-    "question": "In Zootopia, Officer Judy Hopps is what kind of animal?",
-    "answers": ["Rabbit", "Kangaroo", "Deer", "Fox"]
-  },
-  {
-    "question": "Which superhero gains his transformation following accidental exposure to gamma rays during the detonation of an experimental bomb?",
-    "answers": ["Hulk", "Iron Man", "The Human Flame", "Silver Surfer"]
-  },
-  {
-    "question": "What are the names of Cinderella’s evil stepsisters?",
-    "answers": [
-      "Anastasia and Drizella",
-      "Gizelle and Anabelle",
-      "Florence and Marge",
-      "Pam and Shirley"
-    ]
-  },
-  {
-    "question": "Mary Jane Watson has been portrayed by which actress in three movies directed by Sam Raimi?",
-    "answers": [
-      "Kirsten Dunst",
-      "Stephanie Tyler",
-      "Zendaya",
-      "Shailene Woodley"
-    ]
-  },
-  {
-    "question": "Which College Is Elle Applying For In Legally Blonde?",
-    "answers": ["Harvard", "Yale", "Duke", "Princeton"]
-  },
-  {
-    "question": "In Harry Potter, who is Fluffy?",
-    "answers": [
-      "Hagrid’s 3 Headed Dog",
-      "Harry’s Owl",
-      "Hagrid’s Dragon",
-      "Hermione’s Cat"
-    ]
-  },
-  {
-    "question": "What’s the name of the sword in The Sword In The Stone?",
-    "answers": ["Excalibur", "Glamdring", "Callandor", "Nibue"]
-  },
-  {
-    "question": "Which Museum Is Featured In Night at the Museum?",
-    "answers": [
-      "Museum of Natural History",
-      "The Louvre",
-      "The Smithsonian",
-      "National Museum of the American Indian"
-    ]
-  },
-  {
-    "question": "In the early days it was called ‘The DB’, but which fictional New York City tabloid newspaper often appears in the comic books published by Marvel Comics?",
-    "answers": [
-      "The Daily Bugle",
-      "The Times",
-      "The Daily News",
-      "The Chronicle"
-    ]
-  },
-  {
-    "question": "Which superhero is commonly known as Logan and sometimes as Weapon X?",
-    "answers": ["Wolverine", "Silver Surfer", "Green Lantern", "Aquaman"]
-  },
-  {
-    "question": "Which Magazine Does Miranda Work For In The Devil Wears Prada?",
-    "answers": ["Runway", "The Thread", "Upper Elite", "Fashion Bash"]
-  },
-  {
-    "question": "Who sings 'Blurred Lines'?",
-    "answers": ["Robin Thicke", "Pharrell Williams", "Nick Cannon", "Pitbull"]
-  },
-  {
-    "question": "The Playstation game console was developed by which company?",
-    "answers": ["Sony", "Nintendo", "Sega", "Capcom"]
-  },
-  {
-    "question": "Which part of his body did Charlie Chaplin insure?",
-    "answers": ["Feet", "Moustache", "Hands", "Face"]
-  },
-  {
-    "question": "What is the license plate of the DeLorean in the Back to the Future films?",
-    "answers": ["Outatime", "GoFuture", "88timego", "1Time"]
-  }
-]
+{
+  "Entertainment": [
+    {
+      "question": "What was the original name of Mickey Mouse?",
+      "answers": ["Mortimer Mouse", "The Rat", "Marvin Mouse", "Marshall Mouse"]
+    },
+    {
+      "question": "Which superhero, with the alter ego Wade Wilson and the powers of accelerated healing, was played by Ryan Reynolds in a 2016 film of the same name?",
+      "answers": ["Deadpool", "Black Panther", "Ant-Man", "Hawk"]
+    },
+    {
+      "question": "What is the next line for American Pie? Bye, bye Miss American Pie _________",
+      "answers": [
+        "Drove my Chevy to the levee",
+        "I don’t want to see you again",
+        "Good Luck to you",
+        "I am hitting the road"
+      ]
+    },
+    {
+      "question": "Who was the first Disney character created by Walt Disney?",
+      "answers": ["Mickey Mouse", "Alladin", "Donald Duck", "Sleeping Beauty"]
+    },
+    {
+      "question": "Who sings Poker Face?",
+      "answers": ["Lady Gaga", "Madonna", "Taylor Swift", "Kelly Clarkson"]
+    },
+    {
+      "question": "How would Groot answer this question?",
+      "answers": [
+        "I am groot",
+        "YO homie whats up!",
+        "Mark is the bomb yo!",
+        "Groot I am young padawan"
+      ]
+    },
+    {
+      "question": "What did Aladdin steal in the marketplace at the beginning of 'Aladdin'?",
+      "answers": ["Bread", "Apple", "Rice", "Gold"]
+    },
+    {
+      "question": "Stark Industries is associated with which fictional superhero?",
+      "answers": ["Iron Man", "Iron Fist", "Hulk", "Captain America"]
+    },
+    {
+      "question": "In Zootopia, Officer Judy Hopps is what kind of animal?",
+      "answers": ["Rabbit", "Kangaroo", "Deer", "Fox"]
+    },
+    {
+      "question": "Which superhero gains his transformation following accidental exposure to gamma rays during the detonation of an experimental bomb?",
+      "answers": ["Hulk", "Iron Man", "The Human Flame", "Silver Surfer"]
+    },
+    {
+      "question": "What are the names of Cinderella’s evil stepsisters?",
+      "answers": [
+        "Anastasia and Drizella",
+        "Gizelle and Anabelle",
+        "Florence and Marge",
+        "Pam and Shirley"
+      ]
+    },
+    {
+      "question": "Mary Jane Watson has been portrayed by which actress in three movies directed by Sam Raimi?",
+      "answers": [
+        "Kirsten Dunst",
+        "Stephanie Tyler",
+        "Zendaya",
+        "Shailene Woodley"
+      ]
+    },
+    {
+      "question": "Which College Is Elle Applying For In Legally Blonde?",
+      "answers": ["Harvard", "Yale", "Duke", "Princeton"]
+    },
+    {
+      "question": "In Harry Potter, who is Fluffy?",
+      "answers": [
+        "Hagrid’s 3 Headed Dog",
+        "Harry’s Owl",
+        "Hagrid’s Dragon",
+        "Hermione’s Cat"
+      ]
+    },
+    {
+      "question": "What’s the name of the sword in The Sword In The Stone?",
+      "answers": ["Excalibur", "Glamdring", "Callandor", "Nibue"]
+    },
+    {
+      "question": "Which Museum Is Featured In Night at the Museum?",
+      "answers": [
+        "Museum of Natural History",
+        "The Louvre",
+        "The Smithsonian",
+        "National Museum of the American Indian"
+      ]
+    },
+    {
+      "question": "In the early days it was called ‘The DB’, but which fictional New York City tabloid newspaper often appears in the comic books published by Marvel Comics?",
+      "answers": [
+        "The Daily Bugle",
+        "The Times",
+        "The Daily News",
+        "The Chronicle"
+      ]
+    },
+    {
+      "question": "Which superhero is commonly known as Logan and sometimes as Weapon X?",
+      "answers": ["Wolverine", "Silver Surfer", "Green Lantern", "Aquaman"]
+    },
+    {
+      "question": "Which Magazine Does Miranda Work For In The Devil Wears Prada?",
+      "answers": ["Runway", "The Thread", "Upper Elite", "Fashion Bash"]
+    },
+    {
+      "question": "Who sings 'Blurred Lines'?",
+      "answers": ["Robin Thicke", "Pharrell Williams", "Nick Cannon", "Pitbull"]
+    },
+    {
+      "question": "The Playstation game console was developed by which company?",
+      "answers": ["Sony", "Nintendo", "Sega", "Capcom"]
+    },
+    {
+      "question": "Which part of his body did Charlie Chaplin insure?",
+      "answers": ["Feet", "Moustache", "Hands", "Face"]
+    },
+    {
+      "question": "What is the license plate of the DeLorean in the Back to the Future films?",
+      "answers": ["Outatime", "GoFuture", "88timego", "1Time"]
+    }
+  ],
+  "Science & Technology": [
+    {
+      "question": "What is the name of the element with the chemical symbol ‘He’?",
+      "answers": ["Helium", "Hydrogen", "Holmium", "Hafnium"]
+    },
+    {
+      "question": "Which one of the following is the largest ocean in the world?",
+      "answers": [
+        "Pacific Ocean",
+        "Atlantic Ocean",
+        "Arctic Ocean",
+        "Indian Ocean"
+      ]
+    },
+    {
+      "question": "Which star is the brightest star in the night sky?",
+      "answers": ["Sirius A", "Arcturus", "North Star", "None of these"]
+    },
+    {
+      "question": "Sodium Hydrogen Bicarbonate is a scientific name of which common thing?",
+      "answers": ["Baking Soda", "Carbonated Water", "Cream of Tartar", "Salt"]
+    },
+    {
+      "question": "Name the bird in the following which has the largest wingspan?",
+      "answers": [
+        "Albatross bird",
+        "Emperor Penguin",
+        "Dalmatian Pelican",
+        "Emu"
+      ]
+    },
+    {
+      "question": "Which animal can be seen on the Porsche logo?",
+      "answers": ["Horse", "Cougar", "Dog", "Cheetah"]
+    },
+    {
+      "question": "What type of scientist studies living plants?",
+      "answers": ["Botanist", "Geologist", "Paleontologist", "Entomologist"]
+    },
+    {
+      "question": "Which of the following is NOT scientifically considered a fruit?",
+      "answers": ["Broccoli", "Pumpkin", "Pear", "Tomato"]
+    },
+    {
+      "question": "How is the Earth protected from the effects of Solar Winds from the Sun?",
+      "answers": ["Magnetic field", "Oxygen", "The color of the sky", "Gravity"]
+    },
+    {
+      "question": "All species of lemurs are native to which island country?",
+      "answers": ["Madagascar", "Sri Lanka", "Australia", "Indonesia"]
+    },
+    {
+      "question": "How many litres are there in a barrel of oil?",
+      "answers": ["159", "59", "29", "189"]
+    },
+    {
+      "question": "Which British archaeologist discovered Tutankhamun’s tomb?",
+      "answers": [
+        "Howard Carter",
+        "Thomas Young",
+        "Karl Richard Lepsius",
+        "Ippolito Rosellini"
+      ]
+    },
+    {
+      "question": "A 'lepidopterist' is someone who studies which type of creature?",
+      "answers": ["Butterflies", "Birds", "Fish", "Ants"]
+    },
+    {
+      "question": "A lobster’s teeth are located in which part of its body?",
+      "answers": ["Stomach", "Mouth", "Claws", "Legs"]
+    }
+  ],
+  "Art & Culture": [
+    {
+      "question": "What do you call traditional Japanese female entertainers who act as hostesses and whose skills include performing various Japanese arts?",
+      "answers": ["Geisha", "Hakama", "Kimono", "Maiko"]
+    },
+    {
+      "question": "Which city in India would you find the Taj Mahal in?",
+      "answers": ["Agra", "Bangalore", "Chennai", "Kolkata"]
+    },
+    {
+      "question": "The Aztecs even used cocoa beans as what?",
+      "answers": ["Currency", "Drugs", "Stress relievers", "Weapon decorations"]
+    },
+    {
+      "question": "If you are afraid of Halloween, it might be said that you suffer from which of the following?",
+      "answers": [
+        "Samhainophobia",
+        "Pumpkinophobia",
+        "Sanaphobia",
+        "Umbraphobia"
+      ]
+    },
+    {
+      "question": "What was a samurai’s original task?",
+      "answers": [
+        "Protect the nobility",
+        "Assassination",
+        "They were monks, like the Shaolin in China",
+        "Invade other countries"
+      ]
+    },
+    {
+      "question": "“Mama Mia” is based on a song by which Swedish musical act?",
+      "answers": ["ABBA", "Bee Gees", "Queen", "Elton John"]
+    },
+    {
+      "question": "In the Strange case of Dr Jekyll and Mr Hyde, who is Hyde?",
+      "answers": [
+        "Jekyll’s dark side",
+        "Jekyll’s insane brother",
+        "Jekyll’s son born out of wedlock",
+        "Jekyll’s self-made creature"
+      ]
+    },
+    {
+      "question": "The celebration of Samhain is to honor …",
+      "answers": [
+        "The end of summer.",
+        "The God of the dead.",
+        "The priest who held the first Halloween service.",
+        "The souls of the dead"
+      ]
+    },
+    {
+      "question": "What musical features the song “If I Were a Rich Man”?",
+      "answers": [
+        "Fiddler on the Roof",
+        "The Music Man",
+        "My Fair Lady",
+        "Annie"
+      ]
+    },
+    {
+      "question": "In Norse mythology, what is Thor the God of?",
+      "answers": ["Thunder", "Rain", "Dancing", "Pie"]
+    }
+  ],
+  "History": [
+    {
+      "question": "Who was the second president of the USA?",
+      "answers": [
+        "John Adams",
+        "Thomas Jefferson",
+        "Benjamin Franklin",
+        "John Quincy Adams"
+      ]
+    },
+    {
+      "question": "Where is the Great Wall Located?",
+      "answers": ["China", "Japan", "South Korea", "North Korea"]
+    },
+    {
+      "question": "Mr. Pibb was a soft drink created by the Coca-Cola Company to compete with what other soft drink?",
+      "answers": ["Dr. Pepper", "Cherry Cola", "Mountain Dew", "Root beer"]
+    },
+    {
+      "question": "What is the smallest country in the world?",
+      "answers": ["Vatican City", "Tobago", "Maldives", "Seychelles"]
+    },
+    {
+      "question": "Which “Special administrative region of China” has over 7.5 million residents and is therefore one of the most densely populated places in the world?",
+      "answers": ["Hong Kong", "Hubei", "Guangdong", "Shandong"]
+    },
+    {
+      "question": "Who was married to John F. Kenedy and was first lady from 1961 until 1963?",
+      "answers": [
+        "Jacqueline Kennedy Onassis",
+        "Mamie Geneva Doud Kennedy",
+        "Eleanor Kennedy",
+        "Michelle LaVaughn Robinson Kennedy"
+      ]
+    },
+    {
+      "question": "What was the average life expectancy of an Englishman in the middle ages?",
+      "answers": ["33 years", "13 years", "21 years", "41 years"]
+    },
+    {
+      "question": "In what year was the Salyut 1, the first space station ever launched?",
+      "answers": ["1971", "1998", "1956", "2001"]
+    },
+    {
+      "question": "What year did the Chernobyl disaster occur?",
+      "answers": ["1986", "1984", "1985", "1987"]
+    },
+    {
+      "question": "Which country was NOT a Portuguese colony?",
+      "answers": ["Colombia", "Brazil", "Angola", "Mozambique"]
+    },
+    {
+      "question": "What is the official name of the French civil code, established under the French Consulate in 1804 and still in force today?",
+      "answers": [
+        "Code civil des Français",
+        "Code de la route",
+        "Constitution des empereurs",
+        "Oeil pour Dent"
+      ]
+    },
+    {
+      "question": "Which war was fought in South Africa between 1899 and 1902?",
+      "answers": [
+        "Second Boer War (Allow Boer War)",
+        "Boer War",
+        "Anglo-Zulu War",
+        "War of South Africa"
+      ]
+    }
+  ],
+  "Nature & Geography": [
+    {
+      "question": "True or false? All spiders are carnivorous.",
+      "answers": ["True", "False"]
+    },
+    {
+      "question": "Which of these animals don’t live in the wild in Australia?",
+      "answers": ["Opossum", "Kookaburra", "Koala", "Possum"]
+    },
+    {
+      "question": "Hickory trees produce which types of nuts?",
+      "answers": ["Pecans", "Walnuts", "Pistachios", "Macadamia"]
+    },
+    {
+      "question": "Which planet is known as the morning star, as well as the evening star?",
+      "answers": ["Venus", "Saturn", "Jupiter", "Mars"]
+    },
+    {
+      "question": "What colour skin does a polar bear have?",
+      "answers": ["Black", "White", "Pink", "Gray"]
+    },
+    {
+      "question": "A Blue Whale has a heart roughly the size of a what?",
+      "answers": ["VW Beetle", "Basketball", "Grapefruit", "Peanut"]
+    },
+    {
+      "question": "This region, famous for its wines, only produces 4% of California’s wines. What is the name of this region?",
+      "answers": ["Napa Valley", "Snake River Valley", "Sonoma", "Los Carneros"]
+    },
+    {
+      "question": "A mongoose would typically feed on which of the following type of animal?",
+      "answers": ["Earthworm", "Meerkat", "Stork", "Hyena"]
+    },
+    {
+      "question": "Which country flag, nicknamed “The Maple Leaf’ consists of a red field with a white square and features a red maple leaf at its center?",
+      "answers": ["Canada", "Turkey", "Vietnam", "Colombia"]
+    }
+  ],
+  "Family Friendly": [
+    {
+      "question": "What is Mickey Mouse's dog called?",
+      "answers": ["Pluto", "Bruce", "Jude", "Prick"]
+    },
+    {
+      "question": "What is the name of the largest planet in the Solar System?",
+      "answers": ["Jupiter", "Earth", "Mars", "Venus"]
+    },
+    {
+      "question": "In which city is the Disney movie Ratatouille based?",
+      "answers": ["Paris", "Copenhagen", "Dublin", "London"]
+    },
+    {
+      "question": "What are Santa’s little helpers called?",
+      "answers": ["Elves", "Fairies", "Gremlins", "Little People"]
+    },
+    {
+      "question": "Which Italian city is famous for its leaning tower?",
+      "answers": ["Pisa", "San Michele degli Scalzi", "San Nicola", "Venice"]
+    },
+    {
+      "question": "In the following which one food Giant Pandas normally eat?",
+      "answers": ["Bamboo", "Corn", "Fish", "Bananas"]
+    },
+    {
+      "question": "In the movie Finding Nemo, which country has Nemo been taken to?",
+      "answers": ["Australia", "England", "Japan", "New Zealand"]
+    },
+    {
+      "question": "What type of animals pull Santa’s sleigh?",
+      "answers": ["Reindeer", "Dogs", "Horses", "Cats"]
+    },
+    {
+      "question": "What color is the Grinch, who stole Christmas?",
+      "answers": ["Green", "Blue", "Purple", "Brown"]
+    },
+    {
+      "question": "What is the name of the boy who owns Buzz Lightyear in the movie Toy Story?",
+      "answers": ["Andy", "Woody", "Jeremy", "Jack"]
+    },
+    {
+      "question": "In Jungle Book what is the name of the bear?",
+      "answers": ["Baloo", "Dabloo", "Chang", "Mushu"]
+    },
+    {
+      "question": "In Disney’s Frozen, what is the name of the kingdom where Elsa and Anna live?",
+      "answers": ["Arendelle", "Caprica", "Kalyyk", "Laoag"]
+    },
+    {
+      "question": "Which color do you find at the top of a rainbow?",
+      "answers": ["Red", "Blue", "Yellow", "Green"]
+    }
+  ]
+}

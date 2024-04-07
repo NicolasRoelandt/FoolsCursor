@@ -1,28 +1,31 @@
-import cursor from "./cursor.svg";
-import hand from "./hand.svg";
 import "./App.css";
+import Game from "./Game";
+import Button from "./Button";
+import useInterval from "./useInterval";
+import Pointer from "./Pointer";
 import React from "react";
-import { useRef, useEffect, useState } from "react";
+import { randomPositions } from "./utils";
+import { useRef, useState, useEffect } from "react";
 const data = require("./questions.json");
-
 let SPEED = 10;
-let MARGIN = 50;
-let HEADER_HEIGHT = 0;
+
+const initialPos = randomPositions(Object.keys(data).length, 200, 100);
 function App() {
-  let [questionIndex, setQuestionIndex] = useState(0);
-  let [cursorType, setCursorType] = useState("pointer");
-  let current = data[questionIndex];
+  let [category, setCategory] = useState("");
+  if (category === "") {
+    return <ChoseCategory setCategory={setCategory} />;
+  } else {
+    return <Game data={data[category]} />;
+  }
+}
+
+function ChoseCategory({ setCategory }) {
   let [nearestButtonIndex, setNearestButtonIndex] = useState(0);
-
-  let [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-
-  let [buttonsPositions, setButtonsPositions] = useState(() => randomState());
-  let [buttonsStates, setButtonsStates] = useState(
-    buttonsPositions.map(() => "none")
-  );
-
+  let [buttonsPositions, setButtonsPositions] = useState(initialPos);
+  let [cursorType, setCursorType] = useState("pointer");
   let onMouseEnter = () => setCursorType("mouse");
   let onMouseLeave = () => setCursorType("pointer");
+  let [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   const whileMouseDown = () => {
     let butPos = buttonsPositions[nearestButtonIndex];
@@ -46,17 +49,11 @@ function App() {
     setButtonsPositions(newPositions);
   };
 
-  const triggerStateChange = (questionIndex) => {
-    setTimeout(() => {
-      setButtonsPositions(randomState());
-      setButtonsStates(buttonsPositions.map(() => "none"));
-      setQuestionIndex(questionIndex);
-    }, 1000);
-  };
-
   const updateMousePosition = (ev) => {
     setCursorPos({ x: ev.clientX, y: ev.clientY });
   };
+
+  useInterval(whileMouseDown, 50);
 
   useEffect(() => {
     let minIndex = -1;
@@ -74,139 +71,26 @@ function App() {
     setNearestButtonIndex(minIndex);
   }, [buttonsPositions, setNearestButtonIndex, cursorPos]);
 
-  useInterval(() => {
-    whileMouseDown();
-  }, 50);
-
-  const onButtonPress = (index) => {
-    if (index !== 0) {
-      setButtonsStates(
-        buttonsStates.map((state, i) => (i === index ? "wrong" : state))
-      );
-      triggerStateChange(questionIndex);
-    } else {
-      setButtonsStates(
-        buttonsStates.map((state, i) => (i === index ? "correct" : state))
-      );
-      if (questionIndex + 1 >= data.length) {
-        alert("You finished the quiz! Congrats for making it all the way!");
-        return;
-      }
-      triggerStateChange(questionIndex + 1);
-    }
-  };
-
   return (
     <div className="App" onMouseMove={updateMousePosition}>
-      <div
-        id="cursor"
-        style={{
-          pointerEvents: "none",
-          zIndex: 99999,
-          height: 28,
-          width: 28,
-          position: "absolute",
-          left: cursorPos.x - 9,
-          top: cursorPos.y - 8,
-          transform: `rotate(${computeAngle(
-            cursorPos,
-            buttonsPositions[nearestButtonIndex]
-          )}deg)`,
-          transformOrigin: "9px 8px",
-        }}
-      >
-        <img alt="Cursor Arrow" src={cursorType == "pointer" ? cursor : hand} />
+      <Pointer
+        cursorPos={cursorPos}
+        nearestButton={buttonsPositions[nearestButtonIndex]}
+        cursorType={cursorType}
+      />
+      <header>Hello! Please chose one of the categories below</header>
+      <div className="categories">
+        {Object.keys(data).map((key, index) => (
+          <Button
+            label={key}
+            onPress={() => setCategory(key)}
+            pos={buttonsPositions[index]}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          />
+        ))}
       </div>
-      <header>
-        Question {questionIndex + 1}: {current.question}
-      </header>
-
-      {buttonsPositions.map((pos, index) => (
-        <Button
-          pos={pos}
-          key={index}
-          label={current.answers[index]}
-          state={buttonsStates[index]}
-          onPress={() => onButtonPress(index)}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        />
-      ))}
     </div>
-  );
-}
-
-function randomState() {
-  const a = Array.from({ length: 4 }, () => ({
-    x: randomBetween(MARGIN, window.innerWidth - MARGIN),
-    y: randomBetween(HEADER_HEIGHT + MARGIN, window.innerHeight - MARGIN),
-  }));
-  return a;
-}
-function randomBetween(min, max) {
-  const a = min + Math.random() * (max - min);
-  return a;
-}
-
-function computeAngle(cursor, but) {
-  let radians = Math.atan2(but.x - cursor.x, but.y - cursor.y);
-  return radians * (180 / Math.PI) * -1 + 180;
-}
-
-function useInterval(callback, delay) {
-  const savedCallback = useRef();
-
-  // Remember the latest callback.
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
-
-  // Set up the interval.
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-}
-
-function Button({ pos, label, onPress, state, onMouseEnter, onMouseLeave }) {
-  const ref = useRef(null);
-  let width = ref.current ? ref.current.offsetWidth : 0;
-  let height = ref.current ? ref.current.offsetHeight : 0;
-
-  const color = (() => {
-    switch (state) {
-      case "correct":
-        return "hsl(148, 70%, 31%)";
-      case "wrong":
-        return "#FFCCCC";
-      default:
-        return undefined;
-    }
-  })();
-
-  return (
-    <button
-      ref={ref}
-      className="button"
-      style={{
-        padding: 8,
-        position: "absolute",
-        left: pos.x - width / 2,
-        top: pos.y - height / 2,
-        backgroundColor: color,
-        ...(state != "none" && { transition: "background-color 1s" }),
-      }}
-      onClick={onPress}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      {label}
-    </button>
   );
 }
 
