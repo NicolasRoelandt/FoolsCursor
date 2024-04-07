@@ -78,7 +78,7 @@ function ChoseCategory({ setCategory }) {
         nearestButton={buttonsPositions[nearestButtonIndex]}
         cursorType={cursorType}
       />
-      <header>Hello! Please chose one of the categories below</header>
+      <header>Welcome! Please chose one of the categories below</header>
       <div className="categories">
         {Object.keys(data).map((key, index) => (
           <Button
