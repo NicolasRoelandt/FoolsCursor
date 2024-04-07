@@ -5,17 +5,25 @@ import useInterval from "./useInterval";
 import Pointer from "./Pointer";
 import React from "react";
 import { randomPositions } from "./utils";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 const data = require("./questions.json");
 let SPEED = 10;
 
 const initialPos = randomPositions(Object.keys(data).length, 200, 100);
 function App() {
   let [category, setCategory] = useState("");
+  let [score, setScore] = useState(undefined);
   if (category === "") {
     return <ChoseCategory setCategory={setCategory} />;
+  } else if (score === undefined) {
+    return <Game data={data[category]} setScore={setScore} />;
   } else {
-    return <Game data={data[category]} />;
+    return (
+      <header>
+        {`You finished the quiz with a score of ${score}! Congrats for making it
+        all the way!`}
+      </header>
+    );
   }
 }
 
